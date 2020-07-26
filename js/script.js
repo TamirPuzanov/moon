@@ -85,7 +85,7 @@ function init() {
 
 	// } );
 
-	loader.load( '/models/base.glb', function ( gltf ) {
+	loader.load( '/moon/models/base.glb', function ( gltf ) {
 
 		mixer = new THREE.AnimationMixer( gltf );
 
