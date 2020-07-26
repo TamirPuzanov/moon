@@ -10,6 +10,7 @@ var step = 0;
 var audio = new Audio();
 
 (function() {
+	try {
 
 var container, stats, controls;
 var camera, scene, renderer, light, ltf;
@@ -184,7 +185,7 @@ function onDocumentMouseMove(event) {
     mouse.x = (event.clientX / $(window).width()) * 2 - 1;
     mouse.y = -(event.clientY / $(window).height()) * 2 + 1;
 }
-
+	} catch { alert("Ваш браузер не потдерживает технологию WebGl. Просим вас зайти на этот сайт с другого браузера!"); }
 })();
 
 $('.button').on('mouseover', function() {
@@ -297,7 +298,7 @@ function sleep(ms) {
 }
 
 $('.start').click(function() {
-	audio.src = "/tts/" + step + ".ogg";
+	audio.src = "/moon/tts/" + step + ".ogg";
 	audio.onloadeddata = function() {
 		audio.play();
 		$('.start').css('display', 'none');
